@@ -12,4 +12,4 @@ Weather application with Node.Js Express
 ## How to Install
 
 - npm install => install dependencies
-- npm start => starts inlocalhost:3000
+- npm start => starts in localhost:3000
