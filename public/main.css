@@ -12,3 +12,11 @@ body {
 .pure-form input {
     text-align: center;
 }
+
+ul li {
+  list-style-type:none;
+}
+
+ul li span {
+  font-weight: bold;
+}

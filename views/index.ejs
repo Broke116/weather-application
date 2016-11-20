@@ -1,11 +1,19 @@
 <% include header %>
 
 <h1 id="title">What’s your ZIP code?</h1>
-<form class="pure-form">
+<p>Write zip code and get forecast weather data about your region</p>
+<form id="zipform" class="pure-form">
  <fieldset>
- <input type="number" name="zip" placeholder="12345" autofocus required>
- <input type="submit" class="btn btn-primary" name="zip" value="Go" />
+    <input type="number" name="zip" placeholder="12345" autofocus required>
+    <input type="submit" class="btn btn-primary" name="zipbutton" value="Go" />
  </fieldset>
+</form><br/>
+<form id="stateform" class="pure-form">
+    <fieldset>
+      <input type="text" name="city" placeholder="city (Baltimore)" autofocus required>
+      <input type="text" name="state" placeholder="state (MD)" autofocus required>
+      <input type="submit" class="btn btn-primary" name="zip" value="Go" />
+    </fieldset>
 </form>
 
 <div id="weatherResult">
@@ -14,9 +22,5 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/main.js"></script>
-
-<script>
-  var weatherData = <%- JSON.stringify(weatherData) %>;
-</script>
 
 <% include footer %>
