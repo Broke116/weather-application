@@ -1,0 +1,22 @@
+<% include header %>
+
+<h1 id="title">What’s your ZIP code?</h1>
+<form class="pure-form">
+ <fieldset>
+ <input type="number" name="zip" placeholder="12345" autofocus required>
+ <input type="submit" class="btn btn-primary" name="zip" value="Go" />
+ </fieldset>
+</form>
+
+<div id="weatherResult">
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/main.js"></script>
+
+<script>
+  var weatherData = <%- JSON.stringify(weatherData) %>;
+</script>
+
+<% include footer %>
