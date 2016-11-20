@@ -11,4 +11,5 @@ Weather application with Node.Js Express
 
 ## How to Install
 
-- Build solution for restore required files. Then rebuild it
+- npm install => install dependencies
+- npm start => starts inlocalhost:3000
