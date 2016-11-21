@@ -20,3 +20,7 @@ ul li {
 ul li span {
   font-weight: bold;
 }
+
+.desc span {
+    cursor: pointer;
+}

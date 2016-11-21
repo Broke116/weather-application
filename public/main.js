@@ -3,6 +3,16 @@ $(function() {
     var $zip = $("input[name='zip']");
     var $state = $("input[name='state']");
     var $city = $("input[name='city']");
+    var degreeType = "fahrenheit";
+
+    $('#fahrenheit').click(function(){
+        degreeType = "fahrenheit";
+    });
+
+    $('#celcius').click(function(){
+        degreeType = "celcius";
+    });
+
     $("#zipform").on("submit", function(event) {
         document.getElementById('weatherResult').innerHTML = "";
         event.preventDefault();
@@ -26,7 +36,12 @@ $(function() {
             }            
 
             var temperature = data.temperature;
-            $h1.html("It is " + temperature + "&#176; in " + zipCode + ".");
+            if(degreeType == "celcius"){
+                celcius = (temperature -32) * 5 / 9;
+                temperature = Math.round(celcius);
+                $h1.html("It is " + temperature + "&#176C; in " + zipCode + ".");
+            }else
+                $h1.html("It is " + temperature + "&#176F; in " + zipCode + ".");
         });
         
         request.fail(function() {
@@ -60,7 +75,12 @@ $(function() {
             }            
 
             var temperature = data.temperature;
-            $h1.html("It is " + temperature + "&#176; in " + zipCode + ".");
+            if(degreeType == "celcius"){
+                celcius = (temperature -32) * 5 / 9;
+                temperature = Math.round(celcius);
+                $h1.html("It is " + temperature + "&#176;C in " + city + "/" + stateCode + ".");
+            }else
+                $h1.html("It is " + temperature + "&#176;F in " + city + "/" + stateCode + ".");
         });
         
         request.fail(function() {
