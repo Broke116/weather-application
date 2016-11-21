@@ -2,7 +2,7 @@ var express = require('express');
 var zipdb = require("zippity-do-dah");
 var ForecastIo = require("forecastio");
 
-var weather = new ForecastIo("c56fea1eb4c8abf4a602f8769f446d67"); // api key for forecastIo
+var weather = new ForecastIo("#"); // put api key for forecastIo here
 
 var router = express.Router();
 
@@ -60,6 +60,10 @@ router.get(/^\/(\w+)/, function(req, res, next){
             dailySummary: data.daily.summary
         });        
     });
+});
+
+router.get(/^\/(\w+)/, function(req, res, next){
+
 });
 
 module.exports = router;
